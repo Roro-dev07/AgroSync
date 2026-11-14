@@ -1,0 +1,439 @@
+/* =============================================
+   EARTHPULSE: Agricultural Intelligence Dashboard
+   Enhanced for NASA Space Apps Competition
+   ============================================= */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(Photos/bkg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* =============================================
+   HEADER & NAVIGATION
+   ============================================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #43a0b9;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    color: #f8c538;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #f8c538;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.region-color{
+    color:#10b981;
+
+}
+
+/* Location Picker */
+.location-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-picker label {
+    color: #0f1014;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.location-picker select {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #fbfbff;
+    border: 2px solid #38bdf8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    background-color: #0f172a;
+}
+
+.location-picker select:hover {
+    background-color: #0f172a;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    border-color: #4ade80;
+}
+
+.location-picker select:focus {
+    outline: none;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+}
+
+/* Status Badge */
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(30, 41, 59, 0.8);
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #4ade80;
+    border: 1px solid #4ade80;
+    letter-spacing: 1px;
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #4ade80, inset 0 0 5px rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px #4ade80, inset 0 0 5px rgba(255, 255, 255, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 20px #4ade80, inset 0 0 8px rgba(255, 255, 255, 0.5);
+        transform: scale(1.1);
+    }
+}
+
+/* =============================================
+   ALERT BANNER
+   ============================================= */
+
+.alert-banner {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid #fbbf24;
+    animation: slideDown 0.3s ease;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.alert-banner.hidden {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* =============================================
+   DASHBOARD GRID
+   ============================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================
+   CARDS: Base styling
+   ============================================= */
+
+.card {
+    background: linear-gradient(135deg, #111827 0%, #1a202c 100%);
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 12px 24px rgba(56, 189, 248, 0.2);
+}
+
+.card h3 {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Wide cards for charts and alerts */
+.card.wide {
+    grid-column: 1 / -1;
+}
+
+/* =============================================
+   METRIC CARDS
+   ============================================= */
+
+.metric-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 10px 0;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.metric-value .unit {
+    font-size: 1rem;
+    color: #64748b;
+    margin-left: 5px;
+}
+
+.metric-detail {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.trend {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #10b981;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* =============================================
+   PROGRESS BARS
+   ============================================= */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #1f2937;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 12px 0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.temp-fill { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.humidity-fill { background: linear-gradient(90deg, #06b6d4, #0891b2); }
+.rainfall-fill { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+.wind-fill { background: linear-gradient(90deg, #10b981, #059669); }
+.aqi-fill { background: linear-gradient(90deg, #8b5cf6, #7c3aed); }
+
+/* =============================================
+   ALERTS CONTAINER
+   ============================================= */
+
+.alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 4px solid;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.alert strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+.alert p {
+    margin: 0;
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: #10b981;
+    color: #d1fae5;
+}
+
+.alert-info {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: #3b82f6;
+    color: #dbeafe;
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    color: #fef3c7;
+}
+
+.alert-danger {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: #dc2626;
+    color: #fee2e2;
+    font-weight: 600;
+}
+
+.placeholder {
+    color: #64748b;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* =============================================
+   CHARTS
+   ============================================= */
+
+.chart-card {
+    padding: 25px;
+    min-height: 350px;
+}
+
+.chart-card canvas {
+    max-height: 300px;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+
+.dashboard-footer {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #1f2937;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 40px;
+}
+
+/* =============================================
+   RESPONSIVE DESIGN
+   ============================================= */
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .status-badge {
+        align-self: flex-end;
+    }
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Stagger animation for cards */
+.metric-card:nth-child(1) { animation-delay: 0.1s; }
+.metric-card:nth-child(2) { animation-delay: 0.2s; }
+.metric-card:nth-child(3) { animation-delay: 0.3s; }
+.metric-card:nth-child(4) { animation-delay: 0.4s; }

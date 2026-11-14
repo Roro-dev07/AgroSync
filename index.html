@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSync</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header / Mission Control Bar -->
+    <header class="dashboard-header">
+        <div class="header-left">
+            <h1>🌍 AGROSYNC</h1>
+            <p class="tagline">Agricultural Intelligence for Ghana</p>
+        </div>
+        
+        <!-- Location Selector Dropdown -->
+        <div class="location-picker">
+            <h3 for="regionSelect" class="region-color">REGION:</h3>
+            <select id="regionSelect">
+                <option value="ahafo">Ahafo</option>
+                <option value="ashanti">Ashanti</option>
+                <option value="bono">Bono</option>
+                <option value="bono-east">Bono East</option>
+                <option value="central">Central</option>
+                <option value="eastern">Eastern</option>
+                <option value="greater-accra">Greater Accra</option>
+                <option value="northern">Northern</option>
+                <option value="north-east">North East</option>
+                <option value="oti">Oti</option>
+                <option value="savannah">Savannah</option>
+                <option value="upper-east">Upper East</option>
+                <option value="upper-west">Upper West</option>              
+                <option value="volta">Volta</option>
+                  <option value="western">Western</option>
+                <option value="western-north">Western North</option>
+            </select>
+        </div>
+
+    </header>
+
+    <!-- Alert Banner -->
+    <div id="alert-banner" class="alert-banner hidden">
+        <span id="alert-text"></span>
+    </div>
+
+    <!-- Main Dashboard Grid Container -->
+    <main class="dashboard-grid">
+
+        <!-- Row 1: Core Metrics -->
+        <div class="card metric-card">
+            <h3>🌡️ Temperature</h3>
+            <div class="metric-value" id="temp-display">--°C</div>
+            <p class="metric-detail" id="temp-detail">Loading...</p>
+            <div class="progress-bar"><div class="fill temp-fill" id="temp-bar"></div></div>
+            <small class="trend" id="temp-trend">↗ Increasing</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>💧 Relative Humidity</h3>
+            <div class="metric-value" id="humidity-display">--%</div>
+            <p class="metric-detail" id="humidity-detail">Loading...</p>
+            <div class="progress-bar"><div class="fill humidity-fill" id="humidity-bar"></div></div>
+            <small class="trend" id="humidity-trend">↘ Decreasing</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>	🔥 Heat Stress</h3>
+            <div class="metric-value" id="heatStress-display">--%</div>
+            <p class="metric-detail" id="heatStress-detail">Loading...</p>
+            <div class="progress-bar"><div class="fill heatStress-fill" id="heatStress-bar"></div></div>
+            <small class="trend" id="heatStress-trend">↘ Decreasing</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>🌧️ Rainfall (24h)</h3>
+            <div class="metric-value" id="rainfall-display">--mm</div>
+            <p class="metric-detail" id="rainfall-detail">Sparse</p>
+            <div class="progress-bar"><div class="fill rainfall-fill" id="rainfall-bar"></div></div>
+            <small class="trend" id="rainfall-trend">No recent rain</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>🌿💨 Evapotranspiration</h3>
+            <div class="metric-value" id="evapotranspiration-display">--%</div>
+            <p class="metric-detail" id="evapotranspiration-detail">Moderate</p>
+            <div class="progress-bar"><div class="fill evapotranspiration-fill" id="evapotranspiration-bar"></div></div>
+            <small class="trend" id="evapotranspiration-trend">Good</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>🌱💧 Soil Moisture</h3>
+            <div class="metric-value" id="moisture-display">--%</div>
+            <p class="metric-detail" id="moisture-detail">Moderate</p>
+            <div class="progress-bar"><div class="fill wind-fill" id="moisture-bar"></div></div>
+            <small class="trend" id="moisture-trend">Good</small>
+        </div>
+
+        <div class="card metric-card">
+            <h3>🌧️⛰️ Possibility Of Erosion</h3>
+            <div class="metric-value" id="erosion-display">--%</div>
+            <p class="metric-detail" id="erosion-detail">Moderate</p>
+            <div class="progress-bar"><div class="fill erosion-fill" id="erosion-bar"></div></div>
+            <small class="trend" id="erosion-trend">High</small>
+        </div>
+
+        <!-- Row 2: Agricultural Alerts & Recommendations -->
+        <div class="card wide alert-card">
+            <h3>⚠️ Agricultural Alerts & Recommendations</h3>
+            <div id="alerts-container" class="alerts-container">
+                <p class="placeholder">Loading alerts...</p>
+            </div>
+        </div>
+
+        <!-- Row 3: 7-Day Temperature Trend -->
+        <div class="card wide chart-card">
+            <h3>📈 7-Day Temperature Trend</h3>
+            <canvas id="tempChart"></canvas>
+        </div>
+
+        <!-- Row 4: Humidity vs Temperature -->
+        <div class="card wide chart-card">
+            <h3>🌡️💧 Temperature & Humidity Relationship</h3>
+            <canvas id="humidityChart"></canvas>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
