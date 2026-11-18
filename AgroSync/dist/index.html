@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071122"><meta name="description" content="AgroSync agricultural weather intelligence for Ghana."><title>Dashboard | AgroSync</title><link rel="stylesheet" href="style.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="dashboard-header"><div class="container header-content">
+<a class="brand original-brand" href="index.html" aria-label="AgroSync home"><span class="original-logo">🌍 AGROSYNC</span><span class="tagline">Agricultural Intelligence for Ghana</span></a>
+<div class="location-picker"><label for="regionSelect">Select regions</label><select id="regionSelect" name="region"><option value="ahafo">Ahafo</option>
+<option value="ashanti">Ashanti</option>
+<option value="bono">Bono</option>
+<option value="bono-east">Bono East</option>
+<option value="central">Central</option>
+<option value="eastern">Eastern</option>
+<option value="greater-accra">Greater Accra</option>
+<option value="northern">Northern</option>
+<option value="north-east">North East</option>
+<option value="oti">Oti</option>
+<option value="savannah">Savannah</option>
+<option value="upper-east">Upper East</option>
+<option value="upper-west">Upper West</option>
+<option value="volta">Volta</option>
+<option value="western">Western</option>
+<option value="western-north">Western North</option></select></div></div></header>
+<div class="navigation"><nav class="container" aria-label="Main navigation"><ul class="nav-links">
+<li><a href="index.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Dashboard</span></a></li>
+<li><a href="registration.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6m-3-3h6"/></svg><span>Registration</span></a></li>
+<li><a href="broadcast.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-3-7-7-3Z"/><path d="m10 14 5-5"/></svg><span>Broadcast</span></a></li>
+</ul></nav></div>
+<main id="main-content" class="container page-content">
+<section class="hero" aria-labelledby="page-title"><div><span class="eyebrow">Agricultural intelligence / Ghana</span><h1 id="page-title">Farm decision dashboard</h1><p>Explore crop rotations with NASA data, local weather estimates and Ghana agricultural guidance.</p>
+<form id="dashboard-location" class="reg-form" aria-label="Dashboard location">
+<div class="form-row"><label for="dashboard-latitude">Farm/locality latitude</label><input type="number" id="dashboard-latitude" min="4.5" max="11.3" step="any" required></div>
+<div class="form-row"><label for="dashboard-longitude">Farm/locality longitude</label><input type="number" id="dashboard-longitude" min="-3.3" max="1.3" step="any" required></div>
+<div class="form-actions"><button class="button" type="submit">Apply coordinates</button><button class="button" id="dashboard-gps" type="button">Use my location</button><span id="location-status" class="field-help" role="status" aria-live="polite">Region options use capital reference points.</span></div>
+</form></div>
+</section>
+<div id="alert-banner" class="alert-banner hidden" role="status" aria-live="polite"><span id="alert-text"></span></div>
+<div class="section-heading"><h2>Field conditions</h2><p>Values appear when a data source is connected.</p></div>
+<div class="dashboard-grid">
+<section class="card metric-card temperature"><h3>Temperature</h3><div class="metric-value" id="temp-display">--°C</div><p class="metric-detail" id="temp-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill temp-fill" id="temp-bar"></div></div><small class="trend" id="temp-trend">Trend unavailable</small></section>
+<section class="card metric-card humidity"><h3>Relative humidity</h3><div class="metric-value" id="humidity-display">--%</div><p class="metric-detail" id="humidity-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill humidity-fill" id="humidity-bar"></div></div><small class="trend" id="humidity-trend">Trend unavailable</small></section>
+<section class="card metric-card heat"><h3>Heat index · derived</h3><div class="metric-value" id="heatStress-display">--</div><p class="metric-detail" id="heatStress-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill heatStress-fill" id="heatStress-bar"></div></div><small class="trend" id="heatStress-trend">Assessment unavailable</small></section>
+<section class="card metric-card rainfall"><h3>Rainfall · 24 hours</h3><div class="metric-value" id="rainfall-display">-- mm</div><p class="metric-detail" id="rainfall-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill rainfall-fill" id="rainfall-bar"></div></div><small class="trend" id="rainfall-trend">Trend unavailable</small></section>
+<section class="card metric-card evaporation"><h3>Evapotranspiration</h3><div class="metric-value" id="evapotranspiration-display">--</div><p class="metric-detail" id="evapotranspiration-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill evapotranspiration-fill" id="evapotranspiration-bar"></div></div><small class="trend" id="evapotranspiration-trend">Trend unavailable</small></section>
+<section class="card metric-card moisture"><h3>Soil moisture</h3><div class="metric-value" id="moisture-display">--</div><p class="metric-detail" id="moisture-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill wind-fill" id="moisture-bar"></div></div><small class="trend" id="moisture-trend">Assessment unavailable</small></section>
+<section class="card metric-card erosion"><h3>Erosion screen · terrain</h3><div class="metric-value" id="erosion-display">--</div><p class="metric-detail" id="erosion-detail">Awaiting data</p><div class="progress-bar" aria-hidden="true"><div class="fill erosion-fill" id="erosion-bar"></div></div><small class="trend" id="erosion-trend">Assessment unavailable</small></section>
+<section class="card wide alert-card"><h3>Agricultural recommendation</h3>
+<div class="reg-form" role="group" aria-label="Crop guidance context">
+<div class="form-row"><label for="advisory-crop">Crop for guidance</label><select id="advisory-crop">
+<option value="general">General / crop not selected</option><option value="maize">Maize</option><option value="tomato">Tomato</option><option value="pepper">Pepper</option><option value="cabbage">Cabbage</option><option value="cassava">Cassava</option><option value="plantain">Plantain</option><option value="cocoa">Cocoa</option>
+</select></div>
+<div class="form-row"><label for="advisory-stage">Actual crop stage</label><select id="advisory-stage">
+<option value="unspecified">Stage not specified</option><option value="planning">Planning / before planting</option><option value="nursery">Nursery / establishment</option><option value="transplanting">Transplanting</option><option value="vegetative">Vegetative growth</option><option value="flowering">Flowering / tasselling / silking</option><option value="fruiting">Fruit / head / grain development</option><option value="mature">Maturing / harvest</option>
+</select></div>
+</div>
+<div id="recommendations-container" class="alerts-container" aria-live="polite"></div>
+</section>
+</div>
+<section class="card rotation-planner" aria-labelledby="rotation-heading">
+<div class="section-heading"><h2 id="rotation-heading">Explore crop rotations</h2><p>Your farm plan · NASA patterns · Ghana agricultural guidance</p></div>
+<p class="rotation-intro">Choose your crop plan and priorities. A practical crop rotation suggestion appears automatically using the available NASA data and Ghana agricultural guidance.</p>
+<form id="rotation-form" class="rotation-form">
+<div class="reg-form">
+<div class="form-row"><label for="rotation-current">Current crop or fallow</label><select id="rotation-current" required><option value="">Select current crop</option></select></div>
+<div class="form-row"><label for="rotation-next">Next crop in your existing plan</label><select id="rotation-next" required><option value="">Select the next crop in your existing plan</option></select></div>
+<div class="form-row full-width"><label for="rotation-priority">Your main priority</label><select id="rotation-priority"><option value="water">Conserve water</option><option value="organic">Improve soil cover and organic matter</option><option value="nitrogen">Explore nitrogen-fixing crops</option><option value="erosion">Reduce soil exposure and runoff</option><option value="forage">Consider livestock forage</option><option value="market">Diversify products for sale</option></select></div>
+</div>
+<details class="rotation-details"><summary>Add soil, water and harvest-calendar information</summary>
+<div class="reg-form">
+<div class="form-row"><label for="rotation-soil">Soil texture you observe</label><select id="rotation-soil"><option value="unknown">Not known</option><option value="sandy">Sandy</option><option value="loamy">Loamy</option><option value="clayey">Clayey / heavier soil</option></select></div>
+<div class="form-row"><label for="rotation-water">Water available for the next crop</label><select id="rotation-water"><option value="unknown">Not confirmed</option><option value="rainfed">Rain-fed</option><option value="limited">Limited / unreliable supplementary water</option><option value="reliable">Reliable supplementary water</option></select></div>
+<div class="form-row"><label for="rotation-harvest">Current crop harvest date</label><input type="date" id="rotation-harvest" aria-describedby="rotation-calendar-help"></div>
+<div class="form-row"><label for="rotation-sowing">Next crop sowing date</label><input type="date" id="rotation-sowing" aria-describedby="rotation-calendar-help"></div>
+<div class="form-row full-width"><label for="rotation-cover">Cover between these crops</label><select id="rotation-cover"><option value="unknown">Not known / not decided</option><option value="bare">Soil will be left bare</option><option value="residues">Healthy crop residues will remain</option><option value="living">Living vegetation or cover crop</option></select></div>
+<p class="field-help full-width" id="rotation-calendar-help">Use your actual or planned dates. The gap check does not detect bare ground from satellite images or predict a planting date.</p>
+</div></details>
+<p class="field-help" id="rotation-status" role="status" aria-live="polite">Select your current crop and existing next crop. The suggestion updates automatically as you choose your parameters.</p>
+</form>
+<div id="rotation-results" class="alerts-container" aria-label="Crop rotation suggestion"></div>
+</section>
+</main><footer class="dashboard-footer"><div class="container footer-content"><p>AgroSync · Agricultural intelligence for Ghana</p></div></footer>
+
+  <script src="mofa-advisories.js"></script>
+<script src="rotation-planner.js"></script>
+<script src="script.js"></script></body></html>
+
+

@@ -1,0 +1,4 @@
+﻿@import url("style.css");
+.whatsapp-consent { display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
+.whatsapp-consent input { width: 18px; min-height: 18px; flex: 0 0 18px; margin-top: 2px; padding: 0; accent-color: var(--cyan); }
+

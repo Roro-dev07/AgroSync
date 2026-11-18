@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071122"><meta name="description" content="AgroSync agricultural weather intelligence for Ghana."><title>Farmer Registration | AgroSync</title><link rel="stylesheet" href="registration.css"></head><body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="dashboard-header"><div class="container header-content">
+<a class="brand original-brand" href="index.html" aria-label="AgroSync home"><span class="original-logo">🌍 AGROSYNC</span><span class="tagline">Agricultural Intelligence for Ghana</span></a><a class="button" href="login.html">Administrator</a>
+</div></header>
+<div class="navigation"><nav class="container" aria-label="Main navigation"><ul class="nav-links">
+<li><a href="index.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Dashboard</span></a></li>
+<li><a href="registration.html" aria-current="page"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6m-3-3h6"/></svg><span>Registration</span></a></li>
+<li><a href="broadcast.html"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-3-7-7-3Z"/><path d="m10 14 5-5"/></svg><span>Broadcast</span></a></li>
+</ul></nav></div>
+<main id="main-content" class="container page-content">
+<div class="form-layout"><section class="card forms" aria-labelledby="formTitle"><h2 id="formTitle">Farmer registration</h2><p class="form-description">Enter the farmer’s details below. WhatsApp updates are optional.</p>
+<!-- registration.js saves to Supabase after administrator sign-in. -->
+<form class="reg-form" action="#" method="post">
+<div class="form-row"><label for="firstname">First name</label><input type="text" id="firstname" name="firstname" autocomplete="given-name" placeholder="e.g. Ama" required></div>
+<div class="form-row"><label for="lastname">Last name</label><input type="text" id="lastname" name="lastname" autocomplete="family-name" placeholder="e.g. Mensah" required></div>
+<div class="form-row full-width"><label for="region">Region</label><select id="region" name="region" required><option value="" disabled selected>Select a region</option><option value="ahafo">Ahafo</option>
+<option value="ashanti">Ashanti</option>
+<option value="bono">Bono</option>
+<option value="bono-east">Bono East</option>
+<option value="central">Central</option>
+<option value="eastern">Eastern</option>
+<option value="greater-accra">Greater Accra</option>
+<option value="northern">Northern</option>
+<option value="north-east">North East</option>
+<option value="oti">Oti</option>
+<option value="savannah">Savannah</option>
+<option value="upper-east">Upper East</option>
+<option value="upper-west">Upper West</option>
+<option value="volta">Volta</option>
+<option value="western">Western</option>
+<option value="western-north">Western North</option></select></div>
+<div class="form-row full-width"><label for="locality">Locality or district</label><input type="text" id="locality" name="locality" placeholder="Enter town, community or district" required></div>
+<div class="form-row full-width"><label for="contact">Phone number</label><input type="tel" id="contact" name="contact" autocomplete="tel" inputmode="tel" placeholder="+233 XX XXX XXXX" aria-describedby="contact-help" required><p class="field-help" id="contact-help">Include the country code where possible.</p></div>
+<div class="form-row full-width"><label class="whatsapp-consent" for="whatsapp-consent"><input type="checkbox" id="whatsapp-consent" name="whatsappConsent"><span>The farmer confirms that this number uses WhatsApp and agrees to receive AgroSync agricultural updates. They can reply STOP to unsubscribe.</span></label></div>
+<div class="form-actions"><button class="button" type="submit" id="broadcastMessage">Register farmer →</button><span class="field-help">Registration service required</span></div>
+</form></section></div></main><footer class="dashboard-footer"><div class="container footer-content"><p>AgroSync · Agricultural intelligence for Ghana</p></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+<script src="supabase-config.js"></script>
+<script src="farmerDB.js"></script>
+<script src="serverDB.js"></script>
+<script src="registration.js"></script></body></html>
+
+

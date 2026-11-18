@@ -1,0 +1,345 @@
+{
+  "reviewedOn": "2026-11-15",
+  "pageConvention": "1-based physical PDF page, not printed page label",
+  "sources": [
+    {
+      "id": "maize",
+      "title": "MoFA Maize Production Guide",
+      "year": "2020",
+      "publisher": "MoFA / DAES",
+      "file": "GUIDE_TO_MAIZE_PRODUCTION.pdf",
+      "status": "production-guide",
+      "sha256": "609fb6a7e591cd04fde6d9526bf7e110bd5c48c70a9b7057de3fca2034406ca3",
+      "pages": 30,
+      "reviewedPdfPages": [
+        3,
+        7,
+        9,
+        10,
+        17,
+        28,
+        29
+      ],
+      "reviewedSections": [],
+      "use": "Production guidance; use stage-sensitive moisture checks, drainage, rotations and soil testing. No fertilizer rates or germination-temperature alarms."
+    },
+    {
+      "id": "tomato",
+      "title": "MoFA Tomato Production Guide",
+      "year": "2020",
+      "publisher": "MoFA / DAES",
+      "file": "TOMATO_Production_Guide.pdf",
+      "status": "production-guide",
+      "sha256": "dcfc27c351d9fe502f178a54731d27cf80faa72809cf8c1247dedd8cb7282323",
+      "pages": 20,
+      "reviewedPdfPages": [
+        2,
+        5,
+        6,
+        7,
+        8,
+        16,
+        17,
+        18
+      ],
+      "reviewedSections": [],
+      "use": "Production guidance; use drainage and unrelated rotations. Do not propagate the mixed-family example that includes cassava, pesticide rates or inconsistent disease-rotation periods."
+    },
+    {
+      "id": "pepper",
+      "title": "MoFA Pepper Production Guide",
+      "year": "2020",
+      "publisher": "MoFA / DAES",
+      "file": "Pepper_Production.pdf",
+      "status": "production-guide",
+      "sha256": "a9670260b088f73bc5ff303d312e1b7928cac486ea8a6ca5a7e48dcdd08accd1",
+      "pages": 30,
+      "reviewedPdfPages": [
+        2,
+        6,
+        7,
+        12,
+        13,
+        16,
+        26
+      ],
+      "reviewedSections": [],
+      "use": "Production guidance; use drainage and reproductive-stage moisture guidance. Conflicting annual rainfall/temperature ranges are excluded from automated thresholds."
+    },
+    {
+      "id": "cabbage",
+      "title": "MoFA Cabbage Production Guide",
+      "year": "2021",
+      "publisher": "MoFA / DAES",
+      "file": "cabbage_complete_2021.pdf",
+      "status": "production-guide",
+      "sha256": "0a1e2dbd4de3ccc55e1fcda13c0351a093f9a6d51b5d5f06b5198dd72e0b5ebe",
+      "pages": 18,
+      "reviewedPdfPages": [
+        1,
+        6,
+        7,
+        8,
+        16
+      ],
+      "reviewedSections": [],
+      "use": "Production guidance; use water consistency/head stage, drainage and soil tests. The implausible two-week crop-rotation interval is excluded."
+    },
+    {
+      "id": "cocoa",
+      "title": "National Implementation Guide for GS ARS 1000 Part 1",
+      "year": "2023",
+      "publisher": "Ghana Standards Authority / COCOBOD contributors",
+      "file": "national-implementation-guide-for-gs-ars-1000-part-1.pdf",
+      "status": "management-standard",
+      "sha256": "4b5f37167a3c355b61297635cae4b4242ece0982793d465a203b633c60ac17e1",
+      "pages": 83,
+      "reviewedPdfPages": [
+        1,
+        2,
+        32,
+        39,
+        81
+      ],
+      "reviewedSections": [],
+      "use": "GSA/COCOBOD management/traceability guide, not a MoFA weather-warning bulletin. Use soil analysis and cover as planning reminders only; no certification determination."
+    },
+    {
+      "id": "facts",
+      "title": "Agriculture in Ghana: Facts and Figures 2018",
+      "year": "2019 publication; 2018 data",
+      "publisher": "MoFA / SRID",
+      "file": "AGRIC IN GHANA F&F_2018.pdf",
+      "status": "historical-context",
+      "sha256": "d4f8a00cf5d67dd717ec29f7d46cabdb44b66539600d915998674cf50faea080",
+      "pages": 113,
+      "reviewedPdfPages": [
+        1,
+        17,
+        19
+      ],
+      "reviewedSections": [],
+      "use": "2018 statistical reference issued October 2019. Historical seasons and agro-ecology only; no present-day district assignments, planting-onset dates or real-time thresholds."
+    },
+    {
+      "id": "cassava",
+      "title": "Cassava Development in Ghana: country case study",
+      "year": "historical; publication date not verified",
+      "publisher": "Prepared by MoFA; hosted by FAO",
+      "url": "https://www.fao.org/4/a0154e/A0154E07.HTM",
+      "status": "historical-context",
+      "file": "A review of cassava in Africawith country case studies on Nigeria, Ghana,the United Republic of Tanzania, Uganda and Benin.mht",
+      "sha256": "1c3f7eefd23b76cfe9c23e024a275c7ef87ce0df316b3a1bbf5aedbd23b1cb33",
+      "pages": null,
+      "reviewedPdfPages": [],
+      "reviewedSections": [
+        "3.1.1 Farmers' cropping systems",
+        "5.5 Impact on the environment",
+        "7.1.2 Research and extension"
+      ],
+      "use": "MoFA-prepared Ghana chapter saved as MHTML from FAO. Historical rotation/fertility context only. Capture date is not publication date."
+    },
+    {
+      "id": "working",
+      "title": "Cassava and plantain working notes",
+      "year": "undated",
+      "publisher": "User-supplied; author and institutional provenance unverified",
+      "file": "4_6023934268227461554.pdf",
+      "status": "unverified-working-note",
+      "sha256": "ffddb8746fa16250e01da20c955035bbbe6580093642712242825cb5d73070d3",
+      "pages": 6,
+      "reviewedPdfPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "reviewedSections": [],
+      "use": "Six-page user-supplied cassava/plantain summary; no verified author, date or institutional publisher. Reference review only; excluded from operational field/weather rules."
+    },
+    {
+      "id": "facts2021",
+      "title": "Agriculture in Ghana: Facts and Figures 2021",
+      "year": "2022 publication; 2021 data",
+      "publisher": "MoFA / SRID",
+      "pages": 143,
+      "reviewedPdfPages": [
+        1,
+        2,
+        17,
+        18,
+        19,
+        20
+      ],
+      "status": "historical-context",
+      "url": "https://mofa.gov.gh/site/images/pdf/AGRICULTURE%20IN%20GHANA%20%28Facts%20%26%20Figures%29%202021.pdf",
+      "use": "Soil texture and heavier valley-bottom soils support field inspection after rain. Seasonal context is corroborative; regional soil/fertility/rainfall values are not current farm measurements. The foreword contains a 2020 label inconsistent with the cover.",
+      "file": "AGRICULTURE IN GHANA (Facts & Figures) 2021.pdf",
+      "sha256": "0e6d353c0cf16c124196805f92f8e9db6ef68378fa69e6cbeac10d35d6c0b225",
+      "reviewedSections": []
+    },
+    {
+      "id": "facts2024",
+      "title": "Agriculture in Ghana: Facts and Figures 2024",
+      "year": "2025 publication; 2024 data",
+      "publisher": "MoFA / SRID",
+      "pages": 120,
+      "reviewedPdfPages": [
+        1,
+        2,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "status": "historical-context",
+      "url": "https://srid.mofa.gov.gh/sites/default/files/2025-12/AGRICULTURE%20IN%20GHANA%20%28Facts%20%26%20Figures%29%202024.pdf",
+      "use": "Latest supplied statistical edition. Use rainfall-distribution and local-season planning context, not current rainfall, exact planting dates, soil nutrient estimates or automatic crop suitability. Regional aggregation footnotes and apparent table inconsistencies prevent operational rainfall-anomaly rules.",
+      "file": "AGRICULTURE IN GHANA (Facts & Figures) 2024.pdf",
+      "sha256": "ddcee5f3370381b3f3ec7446176d8e20aeaa196953936375f62f563683f6dc1a",
+      "reviewedSections": []
+    },
+    {
+      "id": "conservation",
+      "title": "Green manure/cover crops and crop rotation in Conservation Agriculture on small farms",
+      "year": "2011 publication; volume labelled 2010",
+      "publisher": "FAO; research primarily in Paraguay",
+      "pages": 109,
+      "reviewedPdfPages": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        13,
+        19,
+        20,
+        21,
+        28,
+        29,
+        30,
+        65,
+        66,
+        67,
+        68,
+        78,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "status": "general-conservation-reference",
+      "url": "https://www.fao.org/fileadmin/user_upload/agp/icm12.pdf",
+      "use": "Transferable surface-cover, evaporation/runoff protection and crop-compatibility planning principles, corroborated by Ghana extension guidance. Do not transfer Paraguay planting months, species prescriptions, yield/income gains, fertilizer equivalents, frost rules or density schedules to Ghana. Official icm12.pdf matches the local 109-page pagination; the alternate i2190e00.pdf has 108 pages and is not used for page links.",
+      "file": "Green manurecover crops and crop rotation in Conservation Agriculture rotation in Conservation Agriculture on small farms.pdf",
+      "sha256": "4aa0a564f832c25d9c77f0693b979775508d2a8ca9b4771732f43f5557aa75d1",
+      "reviewedSections": []
+    },
+    {
+      "id": "facts2015",
+      "title": "Agriculture in Ghana: Facts and Figures 2015 (25th edition)",
+      "year": "2016 publication; 2015 data",
+      "publisher": "MoFA / SRID",
+      "pages": 121,
+      "reviewedPdfPages": [
+        1,
+        2,
+        13,
+        14,
+        15,
+        16
+      ],
+      "status": "historical-context-superseded",
+      "use": "Historical corroboration only. Superseded for seasonal planning by 2024. Northern rainy-season months differ from later reports; no automatic planting-onset/calendar alert or numerical soil/rain threshold is drawn from it.",
+      "file": "Statistic Research on Information Directorate of the MoFA-25th edition.pdf",
+      "sha256": "ffa31db7ef36a12f655bee86b5ee08af838618816e640439a014a6989488350b",
+      "reviewedSections": []
+    },
+    {
+      "id": "funding2016",
+      "title": "Funding of Agricultural Research and Development in Ghana: The Case of Council for Scientific and Industrial Research (CSIR)",
+      "year": "2016",
+      "publisher": "Roland Asare and George Owusu Essegbey; Technology and Investment / Scientific Research Publishing",
+      "pages": 11,
+      "reviewedPdfPages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "status": "policy-research-excluded",
+      "url": "https://www.scirp.org/pdf/ti_2016052610373822.pdf",
+      "use": "Agricultural R&D funding and policy study. Not a MoFA crop-production guide or weather bulletin. Reviewed and excluded from all operational recommendations and weather alerts.",
+      "file": "ti_2016052610373822.pdf",
+      "sha256": "f1a13ac268b24037131b3ec3d3d3453f43d38dfc32312997ffe172b2f3615646",
+      "reviewedSections": []
+    },
+    {
+      "id": "cassava_duplicate",
+      "title": "Cassava Development in Ghana: country case study",
+      "year": "historical; publication date not verified",
+      "publisher": "Prepared by MoFA; hosted by FAO",
+      "url": "https://www.fao.org/4/a0154e/A0154E07.HTM",
+      "status": "duplicate",
+      "file": "A review of cassava in Africawith country case studies on Nigeria, Ghana,the United Republic of Tanzania, Uganda and Benin (1).mht",
+      "sha256": "1c3f7eefd23b76cfe9c23e024a275c7ef87ce0df316b3a1bbf5aedbd23b1cb33",
+      "pages": null,
+      "reviewedPdfPages": [],
+      "reviewedSections": [],
+      "use": "Exact byte duplicate; reviewed via the original and not counted as independent evidence.",
+      "duplicateOf": "cassava"
+    },
+    {
+      "id": "conservation_duplicate",
+      "title": "Green manure/cover crops and crop rotation in Conservation Agriculture on small farms",
+      "year": "2011 publication; volume labelled 2010",
+      "publisher": "FAO; research primarily in Paraguay",
+      "pages": 109,
+      "reviewedPdfPages": [],
+      "status": "duplicate",
+      "url": "https://www.fao.org/fileadmin/user_upload/agp/icm12.pdf",
+      "use": "Exact byte duplicate; reviewed via the original and not counted as independent evidence.",
+      "file": "Green manurecover crops and crop rotation in Conservation Agriculture rotation in Conservation Agriculture on small farms (1).pdf",
+      "sha256": "4aa0a564f832c25d9c77f0693b979775508d2a8ca9b4771732f43f5557aa75d1",
+      "reviewedSections": [],
+      "duplicateOf": "conservation"
+    }
+  ],
+  "schemaVersion": 2,
+  "inventory": {
+    "fileCount": 15,
+    "uniqueContentCount": 13,
+    "addedFileCount": 7,
+    "newUniqueContentCount": 5
+  },
+  "externalSources": [
+    {
+      "id": "soil",
+      "title": "An Extension Manual on Soil Nutrient Management for Sustainable Crop Production",
+      "year": "2018",
+      "publisher": "MoFA / DAES and CSIR",
+      "url": "https://mofa.gov.gh/site/images/pdf/production_guides/Manual_on_Soil_Nutrient_Management.pdf",
+      "pages": 14,
+      "reviewedPdfPages": [
+        5,
+        6,
+        7
+      ],
+      "status": "extension-manual",
+      "use": "Corroborates Ghana-relevant soil cover, drainage and field-specific irrigation checks; no dose is calculated."
+    }
+  ]
+}
